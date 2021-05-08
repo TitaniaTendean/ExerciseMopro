@@ -1,15 +1,11 @@
-/* eslint-disable prettier/prettier */
-import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import React from 'react'
+import {View } from 'react-native'
 
-const Gap = ({height}) => {
-  return <View style={styles.gap(height)} />;
-};
+const Gap = ({width, height}) => {
+    return (
+        <View style={{width:width, height:height}}/>
+            
+    )
+}
 
 export default Gap;
-
-const styles = StyleSheet.create({
-  gap: height => ({
-    height: height,
-  }),
-});

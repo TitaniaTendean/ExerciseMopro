@@ -1,29 +1,28 @@
-/* eslint-disable prettier/prettier */
-import React from 'react';
-import {StyleSheet, Text, View, TextInput as Input} from 'react-native';
+import React from 'react'
+import { StyleSheet, Text, View, TextInput as TextInputRN} from 'react-native'
 
-const TextInput = ({label, placeholder}) => {
-  return (
-    <View>
-      <Text style={styles.labelInput}>{label}</Text>
-      <Input style={styles.input} placeholder={placeholder} />
-    </View>
-  );
-};
+const TextInput = ({title, placeholder, ...rest}) => {
+    return (
+        <View>
+            <Text style={styles.text} >{title}</Text>
+            <TextInputRN style={styles.input} placeholder={placeholder} {...rest} />
+        </View>
+    )
+}
 
-export default TextInput;
+export default TextInput
 
 const styles = StyleSheet.create({
-  labelInput: {
-    fontSize: 16,
-    fontFamily: 'Poppins-Medium',
-  },
-  input: {
-    borderWidth: 1,
-    borderColor: 'grey',
-    borderRadius: 10,
-    paddingLeft: 16,
-    paddingVertical: 12,
-    marginTop: 5,
-  },
-});
+    text:{
+        fontSize: 16,
+        fontFamily: 'Poppins-Regular',
+        marginBottom: 6,
+    },
+    input :{
+        borderWidth: 1,
+        borderColor: '#020202',
+        borderRadius: 8,
+        paddingLeft: 10,
+        paddingHorizontal:  10,
+    }
+})
